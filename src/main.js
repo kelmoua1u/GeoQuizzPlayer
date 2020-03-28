@@ -17,7 +17,7 @@ Vue.use(VueGoogleMaps, {
 Vue.use(Vuetify)
 
 
-axios.defaults.baseURL=' https://docketu.iutnc.univ-lorraine.fr:35243/'
+axios.defaults.baseURL=' http://docketu.iutnc.univ-lorraine.fr:35280/'
 
 Vue.config.productionTip = false
 
