@@ -24,7 +24,7 @@ export default new Vuex.Store({
         photo:'',
         difficulty:'',
         difgame:'',
-        urlAxios:''
+        testnav:false
     },
     mutations: {
         setSession(state, data) {

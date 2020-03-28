@@ -1,11 +1,8 @@
 <template>
    <div>
-      <button style="float : left" @click="gotohome">Accueil</button>
       <center>
-         <h1 style="color:white">Top 10 scores</h1>
+         <h1 style="color:white">Top score par série</h1>
          <table>
-            <tr>
-            </tr>
             <tr>
                <th>Player</th>
                <th>Score</th>
@@ -15,7 +12,7 @@
                v-bind:key="index">
                <td>{{s.player}}</td>
                <td>{{s.score}}</td>
-               <td>{{s.serie.city}}</td>
+               <td>{{city}}</td>
             </tr>
          </table>
       </center>
@@ -26,7 +23,8 @@
    export default {
        data(){
            return{
-       scores:''
+       scores:'',
+       city :this.$store.state.serie.city
            }
            
        },
@@ -37,17 +35,12 @@
        },
        methods :{
             getScores(){
-         axios.get("scores").then(response => {
+                let id =this.$store.state.serie.id
+         axios.get("series/"+id+"/scores").then(response => {
            console.log(response.data.result)
             this.scores=response.data.result;
          }).catch(error => console.log(error))
-        },
-       
-           gotohome()
-           {
-               this.$router.push("/");
-           
-       }
+        }
        }
    }
 </script>

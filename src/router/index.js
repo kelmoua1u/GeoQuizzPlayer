@@ -5,6 +5,8 @@ import Game from '../components/Game.vue'
 import List from '../components/ListSerie.vue'
 import Result from '../components/ResultGame.vue'
 import TopScore from '../components/TopScore.vue'
+import Score from '../components/TopScoreSerie.vue'
+import Help from '../components/Help.vue'
 
 Vue.use(VueRouter)
 
@@ -14,6 +16,12 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  {
+    path: '/help',
+    name: 'Help',
+    component: Help
+  }
+  ,
   {
     path: '/topscore',
     name: 'Top',
@@ -33,7 +41,13 @@ const routes = [
     path: '/list',
     name: 'ListSerie',
     component: List
+  },
+  {
+    path: '/score',
+    name: 'Score',
+    component: Score
   }
+
 ]
 
 const router = new VueRouter({

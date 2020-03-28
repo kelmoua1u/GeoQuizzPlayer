@@ -1,12 +1,11 @@
 <template>
    <div id="m" style="width:100%; height:10%">
-      <nav v-bind:class="active" v-on:click.prevent v-if=" $store.state.pseudo !== null">
-        <div style="width :95%;height:90%;  ">
-         <img src="../assets/logo.png" style="width 90%;height:90%;float: left;margin-top:0.5%">
-         <h1 style="  color: white; float: left; margin-left:2%;margin-top:1%;">GéoQuizz</h1>
-         <h6 style="float:right;margin-top:1%" >Player : {{$store.state.pseudo}}</h6>
+      <nav v-bind:class="active" v-on:click.prevent v-if=" $store.state.testnav !== false">
+         <div style="width :95%;height:90%;  ">
+            <img src="../assets/logo.png" style="width 90%;height:90%;float: left;margin-top:0.5%">
+            <h1 style="  color: white; float: left; margin-left:2%;margin-top:1%;">GéoQuizz</h1>
+            <h6 style="float:right;margin-top:1%" >Player : {{$store.state.pseudo}}</h6>
          </div>
-        
       </nav>
    </div>
 </template>
@@ -45,7 +44,6 @@
    }
 </script>
 <style>
-   
    section, footer, header, aside, nav{
    display: block;
    }
@@ -65,7 +63,7 @@
    nav h6{
    display:inline-block;
    color:#03AA6F !important;
-   font-size:32px;
+   font-size:22px;
    font-family: 'Trebuchet MS';
    text-decoration:none !important;
    line-height:1;
@@ -75,6 +73,4 @@
    -moz-transition:background-color 0.25s;
    transition:background-color 0.25s;
    }
-   
-   
 </style>
